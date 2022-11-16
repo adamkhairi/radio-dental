@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {RadioVisite} from "../../services/radio.visite";
 import {DialogService} from "../../services/dialog.service";
 
@@ -9,14 +9,18 @@ import {DialogService} from "../../services/dialog.service";
 
 })
 export class RadioCardComponent implements OnInit ,OnChanges {
- public data: RadioVisite=new RadioVisite('','','',new Date()) ;
+ public data!: RadioVisite;
   constructor(public dialogService:DialogService) { }
 
   ngOnInit(): void {
+    this.data = new RadioVisite('','','',new Date())
   }
+
 
   ngOnChanges(changes: SimpleChanges): void {
     this.data = changes['dialogService']?.currentValue.dialogData
   }
+
+
 
 }

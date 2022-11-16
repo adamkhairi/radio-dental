@@ -29,7 +29,8 @@
 <!--    <div class="div4">D4</div>-->
 <!--</div>-->
 <mat-card>
-  <img matCardImage src="{{data?.image}}" alt="" class="p-2">
+  <img *ngIf="data.image" matCardImage src="{{data.image}}" alt="" class="p-2">
+  <img *ngIf="!data.image || data.image ==''" matCardImage src="./assets/imgs/img.png" alt="" class="p-2">
   <mat-card-content class="container-fluid">
     <div class="row">
       <div class="col-4">

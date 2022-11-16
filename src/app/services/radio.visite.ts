@@ -5,7 +5,7 @@ export class RadioVisite {
   public image: string | ArrayBuffer | undefined ;
   public dateVisite: Date | undefined = new Date();
 
-  constructor(nom: string, prenom: string, dent: string,dateVisite: Date | undefined ,image: string | ArrayBuffer | undefined= "src/assets/imgs/img.png" ) {
+  constructor(nom: string, prenom: string, dent: string,dateVisite: Date | undefined ,image: string | ArrayBuffer | undefined= "./assets/imgs/img.png" ) {
   }
 
 }
