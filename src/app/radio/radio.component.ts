@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {RadioVisite} from "../services/radio.visite";
-import {DialogService} from "../services/dialog.service";
 
 @Component({
   selector: 'app-radio',
@@ -8,22 +7,21 @@ import {DialogService} from "../services/dialog.service";
   styleUrls: ['./radio.component.scss']
 })
 export class RadioComponent implements OnInit {
-  public cardData1: RadioVisite | undefined;
-  public cardData2: RadioVisite | undefined;
+  cardsData: RadioVisite[] = [
+    new RadioVisite('', '', '',undefined, undefined),
+    new RadioVisite('', '', '', undefined, undefined),
+  ];
 
-  constructor(public service: DialogService) {
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  addCard() {
-    this.service.openDialog()
-    this.cardData1 = this.service.dialogData
+  getCardById(id: number) :RadioVisite {
+    return this.cardsData[id] as RadioVisite;
   }
 
-
   export() {
-
   }
 }

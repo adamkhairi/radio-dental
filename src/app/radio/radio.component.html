@@ -1,31 +1,23 @@
+<div class="row">
+  <h1 class="text-center">Title</h1>
+</div>
 
-  <div class="row">
-    <h1 class="text-center">Title</h1>
-  </div>
-
-    <mat-card>
-      <mat-card-content class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <app-radio-card></app-radio-card>
-          </div>
-          <div class="col">
-            <app-radio-card></app-radio-card>
-          </div>
-
-        </div>
-      </mat-card-content>
-    </mat-card>
+<mat-card>
+  <mat-card-content class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <app-radio-card [data]="cardsData[0]"></app-radio-card>
+      </div>
+      <div class="col">
+        <app-radio-card [data]="cardsData[1]"></app-radio-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
 
 
 <div class="container-fluid">
   <div class="row pt-2">
-    <div class="col-md-6 text-center">
-      <button mat-raised-button color="primary" (click)="addCard()">Ajouter</button>
-    </div>
-    <div class="col-md-6 text-center">
-      <button mat-raised-button color="primary" (click)="addCard()">Ajouter</button>
-    </div>
   </div>
   <div class="row justify-content-center pt-0">
     <button mat-fab (click)="export()" color="accent">

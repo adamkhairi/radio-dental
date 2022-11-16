@@ -29,8 +29,10 @@
 <!--    <div class="div4">D4</div>-->
 <!--</div>-->
 <mat-card>
-  <img *ngIf="data.image" matCardImage src="{{data.image}}" alt="" class="p-2">
-  <img *ngIf="!data.image || data.image ==''" matCardImage src="./assets/imgs/img.png" alt="" class="p-2">
+  <a (click)="service.openDialog()" matTooltip="'Ouvrir le dialog d\'ajoute'" class="d-flex justify-content-center pb-4">
+    <img *ngIf="data?.image" matCardImage src="{{data?.image}}" alt="" class="p-2">
+    <img *ngIf="!data?.image || data?.image !=='./assets/imgs/img.png'" matCardImageXLarge  src="./assets/imgs/img.png" alt="" class="p-2">
+  </a>
   <mat-card-content class="container-fluid">
     <div class="row">
       <div class="col-4">

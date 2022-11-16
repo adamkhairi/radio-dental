@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
-import {PhotoHolderService} from "../../../services/photo-holder.service";
+import {DataDialogService} from "../../../services/data-dialog.service";
 
 @Component({
   selector: 'app-photo-holder',
   templateUrl: './photo-holder.component.html',
   styleUrls: ['./photo-holder.component.scss'],
-  providers: [PhotoHolderService]
+  providers: [DataDialogService]
 
 })
 export class PhotoHolderComponent implements OnInit {
 
 
-  constructor(public service:PhotoHolderService) { }
+  constructor(public service:DataDialogService) { }
 
   ngOnInit(): void {
   }

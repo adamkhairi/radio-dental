@@ -1,19 +1,19 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {RadioVisite} from "../../../services/radio.visite";
-import {PhotoHolderService} from "../../../services/photo-holder.service";
+import {DataDialogService} from "../../../services/data-dialog.service";
 
 @Component({
   selector: 'app-radio-dialog',
   templateUrl: './radio-dialog.component.html',
-  styleUrls: ['./radio-dialog.component.scss'],
-  providers: [PhotoHolderService]
+  styleUrls: ['./radio-dialog.component.scss']
 })
 export class RadioDialogComponent implements OnInit {
+  @Output() saveData: EventEmitter<any> = new EventEmitter();
   constructor(
       public dialogRef: MatDialogRef<RadioDialogComponent>,
       @Inject(MAT_DIALOG_DATA) public data: RadioVisite, //TODO: Create Type / Interface of Data,
-      public photoService: PhotoHolderService
+      public service: DataDialogService
   ) {
   }
 
@@ -25,11 +25,16 @@ export class RadioDialogComponent implements OnInit {
   }
 
   selectFile($event: Event) {
-    this.photoService.selectFile($event).finally(() =>{
+    this.service.selectFile($event).subscribe((data:any) =>{
+    debugger
 
-    this.data.image = this.photoService.preview
+    this.data.image = data
     console.log(this.data.image)
     });
+  }
+
+  save() {
+
   }
 }
 
