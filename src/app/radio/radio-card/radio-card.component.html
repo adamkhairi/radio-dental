@@ -1,0 +1,67 @@
+<!--<div class="parent container">-->
+<!--  <div class="div1">-->
+<!--    <app-photo-holder></app-photo-holder>-->
+<!--  </div>-->
+<!--  <div class="div2 p-2">-->
+<!--    <div class="d-flex flex-column">-->
+<!--      <div class="d-flex flex-row">-->
+<!--        <div>-->
+<!--          <p>Nom Complet :</p>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <input name="name" type="text">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="d-flex flex-row">-->
+<!--        <p>Email :</p>-->
+<!--        <input name="Email" type="text">-->
+<!--      </div>-->
+<!--      <div class="d-flex flex-row">-->
+<!--        <p>Date :</p>-->
+<!--        <input name="date" type="date">-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--    <div class="div3">-->
+<!--      <app-photo-holder></app-photo-holder>-->
+<!--    </div>-->
+<!--    <div class="div4">D4</div>-->
+<!--</div>-->
+<mat-card>
+  <img matCardImage src="{{data?.image}}" alt="" class="p-2">
+  <mat-card-content class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        Prénom :
+      </div>
+      <div class="col-8">
+        {{data?.prenom}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Nom :
+      </div>
+      <div class="col-8">
+        {{data?.nom}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Dent :
+      </div>
+      <div class="col-8">
+        {{data?.dent}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Date Visite :
+      </div>
+      <div class="col-8">
+        {{data?.dateVisite | date:"dd/MM/YYYY HH:mm"}}
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

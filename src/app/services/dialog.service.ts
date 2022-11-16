@@ -15,7 +15,7 @@ export class DialogService{
    openDialog() {
      const dialogRef = this.dialog.open(RadioDialogComponent, {
        width: '250px',
-       data: new RadioVisite('','','','',new Date()),
+       data: new RadioVisite('','','',new Date()),
      });
 
      dialogRef.afterClosed().subscribe(result => {

@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-body">
+
+    <div class="row">
+
+      <div class="btn btn-default p-0 text-center">
+        <button mat-fab color="primary" (click)="imgInput.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+        <input class="d-none" #imgInput type="file" accept="image/*" (change)="service.selectFile($event)"/>
+      </div>
+
+
+    </div>
+
+    <div class="row justify-content-center align-content-center">
+      <img [src]="service.preview" class="preview" alt="">
+    </div>
+
+  </div>
+</div>
