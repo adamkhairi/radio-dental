@@ -36,8 +36,8 @@ export class DataDialogService {
 
     this.preview = '';
     this.image = event.target.files[0];
-
     const file: any = this.image;
+    
     if (file) {
       this.preview = '';
       this.currentFile = file;
