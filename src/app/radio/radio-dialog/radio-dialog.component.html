@@ -30,7 +30,7 @@
       <mat-icon *ngIf="service.preview != './assets/imgs/img.png'" class="ms-1">image</mat-icon>
     </button>
 
-    <input #img (change)="selectFile($event)" [(ngModel)]="data.image" accept="image/*" class="d-none" type="file">
+    <input #img (change)="selectFile($event)" accept="image/*" class="d-none" type="file">
 
   </div>
 </div>

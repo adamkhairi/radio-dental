@@ -21,7 +21,7 @@ export class RadioComponent implements OnInit {
         .then(function (dataUrl) {
           var img = new Image();
           img.src = dataUrl;
-          var newTab = window.open('Image a sauvegarder !', 'image depuis la Carte');
+          var newTab = window.open('', 'image depuis la Carte');
           newTab?.document.body.appendChild(img)
           // document.body.appendChild(img);
         })

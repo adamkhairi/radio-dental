@@ -1,7 +1,7 @@
 <mat-card>
-  <a (click)="service.openDialog()" class="d-flex justify-content-center pb-4" matTooltip="Ouvrir le dialog d'ajoute">
-    <img [src]="service.dialogData.image | sanitizerUrl" alt="" class="p-2" matCardImageXLarge>
-    <!--    <img *ngIf="!service.dialogData.image || service.dialogData.image =='./assets/imgs/img.png'" matCardImageXLarge  src="./assets/imgs/img.png" alt="" class="p-2">-->
+  <a (click)="openDialog()" class="d-flex justify-content-center pb-4" matTooltip="Ouvrir le dialog d'ajoute">
+    <img [src]="data.image | sanitizerUrl" alt="" class="p-2" matCardImageXLarge>
+    <!--    <img *ngIf="!data.image || data.image =='./assets/imgs/img.png'" matCardImageXLarge  src="./assets/imgs/img.png" alt="" class="p-2">-->
   </a>
   <mat-card-content class="container-fluid">
     <div class="row">
@@ -9,7 +9,7 @@
         Prénom :
       </div>
       <div class="col-8">
-        {{service.dialogData?.prenom}}
+        {{data?.prenom}}
       </div>
     </div>
     <div class="row">
@@ -17,7 +17,7 @@
         Nom :
       </div>
       <div class="col-8">
-        {{service.dialogData?.nom}}
+        {{data?.nom}}
       </div>
     </div>
     <div class="row">
@@ -25,7 +25,7 @@
         Dent :
       </div>
       <div class="col-8">
-        {{service.dialogData?.dent}}
+        {{data?.dent}}
       </div>
     </div>
     <div class="row">
@@ -33,7 +33,7 @@
         Date Visite :
       </div>
       <div class="col-8">
-        {{service.dialogData.dateVisite | date:"dd/MM/YYYY HH:mm"}}
+        {{data.dateVisite | date:"dd/MM/YYYY HH:mm"}}
       </div>
     </div>
   </mat-card-content>

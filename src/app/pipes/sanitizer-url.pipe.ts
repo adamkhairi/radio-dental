@@ -12,9 +12,14 @@ export class SanitizerUrlPipe implements PipeTransform {
   ) {
   }
 
-  transform(value: string): SafeUrl {
-    let result = this.sanitize.bypassSecurityTrustUrl(value)
-    return value == this.defaultImgUrl ? value : result;
+  transform(value: string | ArrayBuffer|null): SafeUrl {
+
+    if (typeof value === 'string' && value !== this.defaultImgUrl) {
+      return this.sanitize.bypassSecurityTrustUrl(value)
+    } else {
+      return this.defaultImgUrl
+    }
+    // return value == this.defaultImgUrl && typeof value === 'string' ? value : result;
   }
 
 }
