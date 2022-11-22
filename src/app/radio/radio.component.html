@@ -1,26 +1,28 @@
-<div class="row">
-  <h1 class="text-center">Title</h1>
+<div #pdfCard id="pdfCard">
+
+  <div class="row">
+    <h1 class="text-center">Title (to be changed)</h1>
+  </div>
+
+  <mat-card>
+    <mat-card-content class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <app-radio-card></app-radio-card>
+        </div>
+        <div class="col">
+          <app-radio-card></app-radio-card>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
-
-<mat-card>
-  <mat-card-content class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <app-radio-card [data]="cardsData[0]"></app-radio-card>
-      </div>
-      <div class="col">
-        <app-radio-card [data]="cardsData[1]"></app-radio-card>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
-
 
 <div class="container-fluid">
   <div class="row pt-2">
   </div>
   <div class="row justify-content-center pt-0">
-    <button mat-fab (click)="export()" color="accent">
+    <button (click)="export()" color="accent" mat-fab>
       <mat-icon class="mat-18">print</mat-icon>
     </button>
   </div>

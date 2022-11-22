@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {RadioVisite} from "../services/radio.visite";
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import * as htmlToImage from 'html-to-image';
 
 @Component({
   selector: 'app-radio',
@@ -7,10 +7,7 @@ import {RadioVisite} from "../services/radio.visite";
   styleUrls: ['./radio.component.scss']
 })
 export class RadioComponent implements OnInit {
-  cardsData: RadioVisite[] = [
-    new RadioVisite('', '', '',undefined, undefined),
-    new RadioVisite('', '', '', undefined, undefined),
-  ];
+  @ViewChild('pdfCard') pdfCard!: ElementRef;
 
   constructor() {
   }
@@ -18,10 +15,18 @@ export class RadioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCardById(id: number) :RadioVisite {
-    return this.cardsData[id] as RadioVisite;
-  }
-
-  export() {
+  public export() {
+    const node: any = document.getElementById('pdfCard')
+    htmlToImage.toPng(node)
+        .then(function (dataUrl) {
+          var img = new Image();
+          img.src = dataUrl;
+          var newTab = window.open('Image a sauvegarder !', 'image depuis la Carte');
+          newTab?.document.body.appendChild(img)
+          // document.body.appendChild(img);
+        })
+        .catch(function (error) {
+          console.error('oops, something went wrong!', error);
+        });
   }
 }

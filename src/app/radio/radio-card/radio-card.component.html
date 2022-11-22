@@ -1,37 +1,7 @@
-<!--<div class="parent container">-->
-<!--  <div class="div1">-->
-<!--    <app-photo-holder></app-photo-holder>-->
-<!--  </div>-->
-<!--  <div class="div2 p-2">-->
-<!--    <div class="d-flex flex-column">-->
-<!--      <div class="d-flex flex-row">-->
-<!--        <div>-->
-<!--          <p>Nom Complet :</p>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <input name="name" type="text">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="d-flex flex-row">-->
-<!--        <p>Email :</p>-->
-<!--        <input name="Email" type="text">-->
-<!--      </div>-->
-<!--      <div class="d-flex flex-row">-->
-<!--        <p>Date :</p>-->
-<!--        <input name="date" type="date">-->
-<!--      </div>-->
-
-<!--    </div>-->
-<!--  </div>-->
-<!--    <div class="div3">-->
-<!--      <app-photo-holder></app-photo-holder>-->
-<!--    </div>-->
-<!--    <div class="div4">D4</div>-->
-<!--</div>-->
 <mat-card>
-  <a (click)="service.openDialog()" matTooltip="'Ouvrir le dialog d\'ajoute'" class="d-flex justify-content-center pb-4">
-    <img *ngIf="data?.image" matCardImage src="{{data?.image}}" alt="" class="p-2">
-    <img *ngIf="!data?.image || data?.image !=='./assets/imgs/img.png'" matCardImageXLarge  src="./assets/imgs/img.png" alt="" class="p-2">
+  <a (click)="service.openDialog()" class="d-flex justify-content-center pb-4" matTooltip="Ouvrir le dialog d'ajoute">
+    <img [src]="service.dialogData.image | sanitizerUrl" alt="" class="p-2" matCardImageXLarge>
+    <!--    <img *ngIf="!service.dialogData.image || service.dialogData.image =='./assets/imgs/img.png'" matCardImageXLarge  src="./assets/imgs/img.png" alt="" class="p-2">-->
   </a>
   <mat-card-content class="container-fluid">
     <div class="row">
@@ -39,7 +9,7 @@
         Prénom :
       </div>
       <div class="col-8">
-        {{data?.prenom}}
+        {{service.dialogData?.prenom}}
       </div>
     </div>
     <div class="row">
@@ -47,7 +17,7 @@
         Nom :
       </div>
       <div class="col-8">
-        {{data?.nom}}
+        {{service.dialogData?.nom}}
       </div>
     </div>
     <div class="row">
@@ -55,7 +25,7 @@
         Dent :
       </div>
       <div class="col-8">
-        {{data?.dent}}
+        {{service.dialogData?.dent}}
       </div>
     </div>
     <div class="row">
@@ -63,7 +33,7 @@
         Date Visite :
       </div>
       <div class="col-8">
-        {{data?.dateVisite | date:"dd/MM/YYYY HH:mm"}}
+        {{service.dialogData.dateVisite | date:"dd/MM/YYYY HH:mm"}}
       </div>
     </div>
   </mat-card-content>

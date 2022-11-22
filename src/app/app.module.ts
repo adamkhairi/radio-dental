@@ -10,7 +10,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
-import {RadioDialogComponent} from './radio/radio-card/radio-dialog/radio-dialog.component';
+import {RadioDialogComponent} from './radio/radio-dialog/radio-dialog.component';
 import {RadioComponent} from './radio/radio.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
@@ -30,6 +30,8 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MAT_DATE_LOCALE} from "@angular/material/core";
 import {NgxMatMomentAdapter} from "@angular-material-components/moment-adapter";
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS} from "@angular/material-moment-adapter";
+import {DataDialogService} from "./services/data-dialog.service";
+import { SanitizerUrlPipe } from './pipes/sanitizer-url.pipe';
 
 export const MY_NGX_DATE_FORMATS: NgxMatDateFormats = {
   parse: {
@@ -49,7 +51,8 @@ export const MY_NGX_DATE_FORMATS: NgxMatDateFormats = {
     PhotoHolderComponent,
     RadioCardComponent,
     RadioDialogComponent,
-    RadioComponent
+    RadioComponent,
+    SanitizerUrlPipe
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,7 @@ export const MY_NGX_DATE_FORMATS: NgxMatDateFormats = {
     {
       provide: NGX_MAT_DATE_FORMATS,
       useValue: MY_NGX_DATE_FORMATS
-    }
+    },DataDialogService
   ],
 
   bootstrap: [AppComponent]

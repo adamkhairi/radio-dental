@@ -1,0 +1,40 @@
+<h1 align="center" mat-dialog-title>INFORMATIONS</h1>
+<div mat-dialog-content>
+  <div class="d-flex flex-row flex-wrap gap-1 justify-content-around">
+    <mat-form-field appearance="outline">
+      <mat-label>Prénom</mat-label>
+      <input [(ngModel)]="data.prenom" matInput name="prenom">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input [(ngModel)]="data.nom" matInput name="nom">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Dent</mat-label>
+      <input [(ngModel)]="data.dent" matInput name="dent">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <!--      <mat-label>Date Visite</mat-label>-->
+      <!--      <input matInput type="date" [(ngModel)]="data.dateVisite" name="date">-->
+      <input [(ngModel)]="data.dateVisite" [ngxMatDatetimePicker]="picker" matInput placeholder="Date Visite">
+      <mat-datepicker-toggle [for]="$any(picker)" matSuffix>
+      </mat-datepicker-toggle>
+      <ngx-mat-datetime-picker #picker [showSpinners]="true">
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+
+  </div>
+  <div class="text-center flex-column align-content-center">
+    <button (click)="img.click()" color="accent" mat-raised-button>
+      <span>Photo</span>
+      <mat-icon *ngIf="service.preview != './assets/imgs/img.png'" class="ms-1">image</mat-icon>
+    </button>
+
+    <input #img (change)="selectFile($event)" [(ngModel)]="data.image" accept="image/*" class="d-none" type="file">
+
+  </div>
+</div>
+<div align="end" mat-dialog-actions>
+  <button (click)="onNoClick()" color="warn" mat-raised-button>Annuler</button>
+  <button [mat-dialog-close]="data" color="primary" mat-raised-button>Ok</button>
+</div>

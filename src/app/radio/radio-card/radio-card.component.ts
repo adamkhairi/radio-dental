@@ -7,7 +7,6 @@ import {DataDialogService} from "../../services/data-dialog.service";
   templateUrl: './radio-card.component.html',
   styleUrls: ['./radio-card.component.scss'],
   providers: [DataDialogService]
-
 })
 export class RadioCardComponent implements OnInit, OnChanges {
   @Input() data: RadioVisite | undefined;

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RadioDialogComponent } from './radio-dialog.component';
+import {RadioDialogComponent} from './radio-dialog.component';
 
 describe('RadioDialogComponent', () => {
   let component: RadioDialogComponent;
@@ -8,9 +8,9 @@ describe('RadioDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RadioDialogComponent ]
+      declarations: [RadioDialogComponent]
     })
-    .compileComponents();
+        .compileComponents();
 
     fixture = TestBed.createComponent(RadioDialogComponent);
     component = fixture.componentInstance;
