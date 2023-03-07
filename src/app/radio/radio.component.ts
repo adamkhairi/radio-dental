@@ -20,8 +20,10 @@ export class RadioComponent implements OnInit {
     htmlToImage.toPng(node)
         .then(function (dataUrl) {
           var img = new Image();
+          img.style.width =' 100%'
           img.src = dataUrl;
           var newTab = window.open('', 'image depuis la Carte');
+
           newTab?.document.body.appendChild(img)
           // document.body.appendChild(img);
         })
